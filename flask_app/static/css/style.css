@@ -1,0 +1,81 @@
+.border-right {
+    border-right: 2px solid #333;
+    height: auto;
+}
+
+.custom_background {
+    background-image: url('/static/image/background_img.webp'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100vh; 
+}
+
+.bg_color {
+    background-color: #091341;
+}
+
+.intro {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; /
+    align-items: center; 
+    height: 100vh;
+    text-align: center; 
+}
+
+.text_color {
+    color: white;
+}
+
+.custom-submit-button {
+    background-color: #2a51ee;
+    color: white;
+    border: 2px solid #ffffff;
+}
+
+.custom-submit-button:hover {
+    background-color: #93bcec;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+.custom-jumbotron {
+    background: transparent; 
+    color: #333; 
+}
+
+.title {
+    font-size: 80px;
+}
+
+.title_2 {
+    font-size: 60px;
+}
+
+.flex-container {
+    border-bottom: 2px solid #ffffff;
+}
+
+.welcome-heading {
+    margin-top: 30px;
+}
+
+.top_space {
+    margin-top: 200px;
+}
+
+.form_group.text-center {
+    margin-top: 20px; 
+    text-align: center; 
+}
+
+.card-img-top {
+    width: auto;
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    margin: 0 auto;
+}
