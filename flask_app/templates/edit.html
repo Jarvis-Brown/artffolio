@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='css/style.css' ) }}" rel="stylesheet"
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="flex-container d-flex justify-content-between w-100">
+                <h2>Edit Project</h2>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="text-danger">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="d-flex">
+                    <a href="/projects/home" class="nav-link px-0 ml-auto">Projects</a>
+                    <a href="/logout" class="nav-link">Logout</a>
+                </div>
+                
+            </div>            
+        </div>
+        <form action="/projects/update" class="col-8 custom-form" method="post" enctype="multipart/form-data">
+            <div>
+                <input type="hidden" name="id" value="{{ project.id }}">
+                <div class="form_group">
+                    <label for="image" class="form-label">Image:</label>
+                    <input type="file" name="image" class="form-control" value="{{ project.image }}">
+                </div>
+                <div class="form_group">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" name="title" class="form-control" value="{{ project.title }}">
+                </div>
+                <div class="form_group">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea name="description" class="form-control">{{ project.description }}</textarea>
+                </div>
+                <div class="form_group">
+                    <label for="file" class="form-label">File (Current: {{ project.file }}):</label>
+                    <input type="file" class="form-control" name="file">
+                    <!-- Note: No value attribute for file input -->
+                </div>
+                
+                <div class="form_group">
+                    <input type="submit" value="Update" class="btn btn-outline-dark ml-auto">
+                </div> 
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>

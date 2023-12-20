@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="{{ url_for('static', filename='css/style.css' ) }}" rel="stylesheet"
+    <title>Register</title>
+</head>
+<body class="custom_background">
+    <div class="container">
+        <!-- Banner with "Artfolio" heading -->
+        <div class="jumbotron text-center mb-4">
+            <h1 class="title">Artfolio</h1>
+        </div>
+
+        <!-- Forms Section -->
+        <div class="row">
+            <div class="col-lg-6 border-right">
+                <form action="/login" method="post" class="custom-form">
+                    <h2 class="text-center text_color">Sign in</h2>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p class="text-danger">{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <div class="form_group text_color">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                    <div class="form_group text_color">
+                        <label for="password">Password: </label>
+                        <input type="password" name="password" class="form-control">
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-outline-dark mt-3 mx-auto text_color"> <!-- Added mx-auto -->
+                </form>
+            </div> 
+            <div class="col-lg-6">
+                <form action="/register" method="post" class="custom-form">
+                    <h2 class="text-center text_color">Create Account</h2>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p class="text-danger">{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    
+                    <div class="form_group text_color">
+                        <label for="first_name">First Name: </label>
+                        <input type="text" name="first_name" class="form-control">
+                    </div>
+                    <div class="form_group text_color">
+                        <label for="last_name">Last Name: </label>
+                        <input type="text" name="last_name" class="form-control">
+                    </div>
+                    <div class="form_group text_color">
+                        <label for="email">Email: </label>
+                        <input type="text" name="email" class="form-control">
+                    </div>
+                    <div class="form_group text_color">
+                        <label for="password">Password: </label>
+                        <input type="password" name="password" class="form-control">
+                    </div>
+                    <div class="form_group text_color">
+                        <label for="confirm">Confirm PW: </label>
+                        <input type="password" name="confirm" class="form-control">
+                    </div>
+                    <input type="submit" value="Submit" class="center_button btn btn-outline-dark mt-3 mx-auto text_color"> <!-- Added mx-auto -->
+                </form>
+            </div> 
+        </div>
+    </div>    
+</body>
+</html>
+
+
